@@ -11,7 +11,7 @@ function App() {
     const fetchContent = async (selectedFeeling) => {
         try {
             console.log(`Fetching content for feeling: ${selectedFeeling}`);
-            const response = await axios.get(`https://feeling-app-six.vercel.app/api/${selectedFeeling}/ayat`);
+            const response = await axios.get(`https://feeling-app-six.vercel.app/backend/api/${selectedFeeling}/ayat`);
             console.log("API response:", response.data);
             setAyat(response.data.text);
             setShowResult(true);
@@ -25,7 +25,7 @@ function App() {
     const fetchMoreAyat = async () => {
         try {
             console.log(`Fetching more ayats for feeling: ${feeling}`);
-            const response = await axios.get(`https://feeling-app-six.vercel.app/api/${feeling}/ayat`);
+            const response = await axios.get(`https://feeling-app-six.vercel.app/backend/api/${feeling}/ayat`);
             console.log("API response:", response.data);
             setAyat(response.data.text);
         } catch (error) {
@@ -37,7 +37,7 @@ function App() {
     const fetchMoreHadith = async () => {
         try {
             console.log(`Fetching more hadith for feeling: ${feeling}`);
-            const response = await axios.get(`https://feeling-app-six.vercel.app/api/${feeling}/hadith`);
+            const response = await axios.get(`https://feeling-app-six.vercel.app/backend/api/${feeling}/hadith`);
             console.log("API response:", response.data);
             setAyat(response.data.text);
         } catch (error) {
